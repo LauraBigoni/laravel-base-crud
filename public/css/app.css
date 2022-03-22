@@ -11250,3 +11250,6 @@ main #jumbo {
   background-size: cover;
   height: 750px;
 }
+main a {
+  text-decoration: none;
+}

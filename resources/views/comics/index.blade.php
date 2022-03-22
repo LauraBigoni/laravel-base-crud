@@ -10,19 +10,16 @@
                         <div class="card col-2 m-2">
                             <img src="{!! $comic->thumb !!}" class="img-fluid card-img-top" alt="{{ $comic->title }}">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $comic->title }}</h5>
+                                <h5 class="card-title text-uppercase text-info">{{ $comic->title }}</h5>
                                 <p class="card-text">
                                     {{ substr($comic->description, 0, 150) }}...
                                 </p>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Serie: {{ $comic->series }}</li>
-                                <li class="list-group-item">Tipo: {{ $comic->type }}</li>
-                                <li class="list-group-item">Uscita: {{ $comic->sale_date }}</li>
-                                <li class="list-group-item">Prezzo: {{ $comic->price }}€</li>
+                                <li class="list-group-item"><span class="text-info fw-bold">Tipo:</span> {{ $comic->type }}</li>
                             </ul>
                             <div class="card-body">
-                                <a href="{{ route('comics.show', $comic->id) }}" class="card-link">Info</a>
+                                <a href="{{ route('comics.show', $comic->id) }}" class="text-info fw-bold card-link">Vedi dettagli</a>
                             </div>
                         </div>
                     @endforeach

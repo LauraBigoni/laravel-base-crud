@@ -3,6 +3,9 @@
 @section('content')
     <div class="container-fluid">
         <div class="row">
+            <div class="add-comic d-flex align-items-center justify-content-end p-4">
+                <a href="{{ route('comics.create') }}" class="btn btn-primary">Aggiungi un nuovo fumetto</a>
+            </div>
             <div class="col-12">
                 <h1 class="text-center">COMICS</h1>
                 <div class="d-flex flex-wrap justify-content-center">
@@ -16,13 +19,15 @@
                                 </p>
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item"><span class="text-info fw-bold">Tipo:</span> {{ $comic->type }}</li>
+                                <li class="list-group-item"><span class="text-info fw-bold">Tipo:</span>
+                                    {{ $comic->type }}</li>
                             </ul>
                             <div class="card-body">
-                                <a href="{{ route('comics.show', $comic->id) }}" class="text-info fw-bold card-link">Vedi dettagli</a>
+                                <a href="{{ route('comics.show', $comic->id) }}" class="text-info fw-bold card-link">Vedi
+                                    dettagli</a>
                             </div>
                         </div>
-                        @empty 
+                    @empty
                         <h3>Nessun fumetto da mostrare..</h3>
                     @endforelse
                 </div>

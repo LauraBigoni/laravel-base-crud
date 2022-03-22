@@ -12,6 +12,7 @@
 </head>
 
 <body>
+    @include('includes.header')
     
     <main>
 

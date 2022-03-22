@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     <meta charset="UTF-8">
@@ -11,14 +11,17 @@
     <title>{{ env('APP_NAME') }}</title>
 </head>
 
-<body>
+<body class="d-flex flex-column h-100">
     @include('includes.header')
-    
-    <main>
+
+    <main class="flex-shrink-0">
 
         @yield('content')
 
     </main>
+
+    @include('includes.footer')
+
     @yield('scripts')
 </body>
 

@@ -1,5 +1,5 @@
-<footer class="footer mt-auto py-3 bg-light">
+<footer class="footer mt-auto py-3 bg-light text-center">
     <div class="container">
-        <span>Made with &#9825; by Laura.</span>
+        <span>Made with <span class="text-danger">&#9825;</span> by Laura.</span>
     </div>
 </footer>

@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-                <div class="card col-6 m-2">
+                <div class="card col-4 m-4">
                     <img src="{!! $comic->thumb !!}" class="img-fluid card-img-top" alt="{{ $comic->title }}">
                     <div class="card-body">
                         <h5 class="card-title text-info text-uppercase">{{ $comic->title }}</h5>

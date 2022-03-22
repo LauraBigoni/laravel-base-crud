@@ -6,7 +6,7 @@
             <div class="col-12">
                 <h1 class="text-center">COMICS</h1>
                 <div class="d-flex flex-wrap justify-content-center">
-                    @foreach ($comics as $comic)
+                    @forelse ($comics as $comic)
                         <div class="card col-2 m-2">
                             <img src="{!! $comic->thumb !!}" class="img-fluid card-img-top" alt="{{ $comic->title }}">
                             <div class="card-body">
@@ -22,7 +22,9 @@
                                 <a href="{{ route('comics.show', $comic->id) }}" class="text-info fw-bold card-link">Vedi dettagli</a>
                             </div>
                         </div>
-                    @endforeach
+                        @empty 
+                        <h3>Nessun fumetto da mostrare..</h3>
+                    @endforelse
                 </div>
             </div>
         </div>

@@ -22,9 +22,10 @@
                                 <li class="list-group-item"><span class="text-info fw-bold">Tipo:</span>
                                     {{ $comic->type }}</li>
                             </ul>
-                            <div class="card-body">
-                                <a href="{{ route('comics.show', $comic->id) }}" class="text-info fw-bold card-link">Vedi
-                                    dettagli</a>
+                            <div class="card-body d-flex align-items-center justify-content-between"> 
+                                <a href="{{ route('comics.show', $comic->id) }}"
+                                    class="fw-bold btn btn-sm btn-info me-3">Dettagli <i class="fa-solid fa-circle-info"></i></a><a href="{{ route('comics.edit', $comic) }}"
+                                    class="fw-bold btn btn-sm btn-warning">Modifica <i class="fa-solid fa-pencil"></i></a>
                             </div>
                         </div>
                     @empty

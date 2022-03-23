@@ -19,7 +19,7 @@
                         <li class="list-group-item"><span class="text-info fw-bold">Serie:</span> {{ $comic->series }}
                         </li>
                         <li class="list-group-item"><span class="text-info fw-bold">Tipo:</span> {{ $comic->type }}</li>
-                        <li class="list-group-item"><span class="text-info fw-bold">Uscita:</span> {{ $comic->sale_date }}
+                        <li class="list-group-item"><span class="text-info fw-bold">Uscita:</span> {{ date('d-m-Y', strtotime($comic->sale_date)) }}
                         </li>
                         <li class="list-group-item"><span class="text-info fw-bold">Prezzo:</span> {{ $comic->price }}€
                         </li>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="return-back d-flex align-items-center justify-content-end p-4">
-                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-info">Modifica</a>
+                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-info">Modifica <i class="ms-2 fa-solid fa-pencil"></i></a>
             </div>
         </div>
     </div>

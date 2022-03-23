@@ -8,8 +8,18 @@
             </div>
             <div class="col-12 py-4">
                 <h1 class="text-center">Inserisci un nuovo fumetto</h1>
+                @if ($errors->any())
+                    <div class="alert alert-danger text-center" role="alert">
+                        <ul class="list-unstyled">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form class="d-flex flex-wrap align-items-center justify-content-between"
-                    action="{{ route('comics.store') }}" method="POST">
+                    action="{{ route('comics.store') }}" method="POST" novalidate>
                     @csrf
                     <div class="m-3 col-3">
                         <label for="title" class="form-label">Titolo:</label>
@@ -45,7 +55,8 @@
                     <div class="m-3 col-3">
                         <label for="description" class="form-label">Descrizione:</label>
                         <textarea class="form-control" id="description" name="description" rows="2"></textarea>
-                        <div id="description-help" class="form-text">Inserisci una breve descrizione del fumetto</div>
+                        <div id="description-help" class="form-text">Inserisci una breve descrizione del fumetto
+                        </div>
                     </div>
                     <div class="buttons">
                         <button type="reset" class="btn btn-warning">Reset</button>

@@ -7,7 +7,9 @@
                 <a href="{{ route('comics.show', $comic) }}" class="btn btn-info">Indietro</a>
             </div>
             <div class="col-12 py-4">
-                <h1 class="text-center">Modifica il fumetto</h1>
+                <div class="d-flex align-items-baseline justify-content-center">
+                    <h1 class="text-center">Modifica il fumetto</h1> <i class="ms-2 fa-solid fa-pencil"></i>
+                </div>
                 <form class="d-flex flex-wrap align-items-center justify-content-between"
                     action="{{ route('comics.show', $comic) }}" method="POST">
                     @csrf
@@ -36,7 +38,7 @@
                     <div class="m-3 col-3">
                         <label for="sale_date" class="form-label">Data di uscita:</label>
                         <input type="text" class="form-control" id="sale_date" name="sale_date"
-                            value="{{ $comic->sale_date }}">
+                            value="{{ date('d-m-Y', strtotime($comic->sale_date)) }}">
                         <div id="sale_date-help" class="form-text">Modifica la data di uscita</div>
                     </div>
                     <div class="m-3 col-3">
@@ -51,7 +53,8 @@
                     </div>
                     <div class="col-2 buttons">
                         <button type="reset" class="btn btn-warning">Reset</button>
-                        <button type="submit" class="btn btn-primary">Modifica</button>
+                        <button type="submit" class="btn btn-success">Modifica <i
+                                class="ms-2 fa-solid fa-pencil"></i></button>
                     </div>
                 </form>
             </div>

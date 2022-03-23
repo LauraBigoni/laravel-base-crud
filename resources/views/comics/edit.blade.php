@@ -10,6 +10,16 @@
                 <div class="d-flex align-items-baseline justify-content-center">
                     <h1 class="text-center">Modifica il fumetto</h1> <i class="ms-2 fa-solid fa-pencil"></i>
                 </div>
+                @if ($errors->any())
+                    <div class="alert alert-danger text-center" role="alert">
+                        <ul class="list-unstyled">
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
                 <form class="d-flex flex-wrap align-items-center justify-content-between"
                     action="{{ route('comics.update', $comic->id) }}" method="POST" novalidate>
                     @csrf

@@ -22,12 +22,18 @@
                                 <li class="list-group-item"><span class="text-info fw-bold">Tipo:</span>
                                     {{ $comic->type }}</li>
                             </ul>
-                            <div class="card-body d-flex align-items-center justify-content-between">
+                            <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                 <a href="{{ route('comics.show', $comic->id) }}"
-                                    class="fw-bold btn btn-sm btn-info me-3">Dettagli <i
+                                    class="fw-bold btn btn-sm btn-info">Dettagli <i
                                         class="fa-solid fa-circle-info"></i></a>
                                 <a href="{{ route('comics.edit', $comic->id) }}"
-                                    class="fw-bold btn btn-sm btn-warning">Modifica <i class="fa-solid fa-pencil"></i></a>
+                                    class="fw-bold btn btn-sm btn-warning my-2">Modifica <i class="fa-solid fa-pencil"></i></a>
+                                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+
+                                    <button class="fw-bold btn btn-sm btn-danger" type="submit">Elimina <i class="fa-solid fa-trash-can"></i></button>
+                                </form>
                             </div>
                         </div>
                     @empty

@@ -14,7 +14,7 @@
                     action="{{ route('comics.update', $comic->id) }}" method="POST" novalidate>
                     @csrf
                     @method('PUT')
-                    
+
                     <div class="m-3 col-3">
                         <label for="title" class="form-label">Titolo:</label>
                         <input type="text" class="form-control" id="title" name="title" required
@@ -39,7 +39,7 @@
                     <div class="m-3 col-3">
                         <label for="sale_date" class="form-label">Data di uscita:</label>
                         <input type="text" class="form-control" id="sale_date" name="sale_date"
-                            value="{{ date('d-m-Y', strtotime($comic->sale_date)) }}">
+                            value="{{ $comic->sale_date }}">
                         <div id="sale_date-help" class="form-text">Modifica la data di uscita</div>
                     </div>
                     <div class="m-3 col-3">

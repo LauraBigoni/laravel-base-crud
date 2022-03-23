@@ -93,6 +93,16 @@ class ComicsController extends Controller
             'type' => 'required|string',
             'sale_date' => 'date',
             'logo' => 'url'
+        ], [
+            'required' => 'Il campo :attribute è obbligatorio.',
+            'title.min' => 'Titolo troppo corto',
+            'title.max' => 'Titolo troppo lungo',
+            'url' => 'Non hai inserito un immagine corretta',
+            'date' => 'Inserisci una data valida.',
+            'price.max' => 'Il massimo è 999',
+            'price.min' => 'Non puoi inserire 0',
+            'title.unique' => "$request->comic->title esiste già.",
+
         ]);
 
         $data = $request->all();

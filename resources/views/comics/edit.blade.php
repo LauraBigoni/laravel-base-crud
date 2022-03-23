@@ -4,16 +4,17 @@
     <div class="container">
         <div class="row">
             <div class="return-back d-flex align-items-center justify-content-end p-4">
-                <a href="{{ route('comics.show', $comic) }}" class="btn btn-info">Indietro</a>
+                <a href="{{ route('comics.show', $comic->id) }}" class="btn btn-info">Indietro</a>
             </div>
             <div class="col-12 py-4">
                 <div class="d-flex align-items-baseline justify-content-center">
                     <h1 class="text-center">Modifica il fumetto</h1> <i class="ms-2 fa-solid fa-pencil"></i>
                 </div>
                 <form class="d-flex flex-wrap align-items-center justify-content-between"
-                    action="{{ route('comics.show', $comic) }}" method="POST">
+                    action="{{ route('comics.update', $comic->id) }}" method="POST" novalidate>
                     @csrf
-
+                    @method('PUT')
+                    
                     <div class="m-3 col-3">
                         <label for="title" class="form-label">Titolo:</label>
                         <input type="text" class="form-control" id="title" name="title" required

@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="return-back d-flex align-items-center justify-content-end p-4">
-                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-info">Modifica <i class="ms-2 fa-solid fa-pencil"></i></a>
+                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-info">Modifica <i class="ms-2 fa-solid fa-pencil"></i></a>
             </div>
         </div>
     </div>

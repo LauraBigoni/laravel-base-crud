@@ -73,7 +73,8 @@ class ComicsController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(Comic $comic)
-    {
+    {   
+        
         return view('comics.edit', compact('comic'));
     }
 

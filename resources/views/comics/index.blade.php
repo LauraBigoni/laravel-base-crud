@@ -8,6 +8,12 @@
             </div>
             <div class="col-12">
                 <h1 class="text-center">COMICS</h1>
+                @if (session('message'))
+                    <div class="container alert alert-{{ session('type') }} text-center" role="alert">
+                        <p>{{ session('message') }}</p>
+                    </div>
+                @endif
+
                 <div class="d-flex flex-wrap justify-content-center">
                     @forelse ($comics as $comic)
                         <div class="card col-2 m-2">
@@ -24,15 +30,16 @@
                             </ul>
                             <div class="card-body d-flex flex-column align-items-center justify-content-center">
                                 <a href="{{ route('comics.show', $comic->id) }}"
-                                    class="fw-bold btn btn-sm btn-info">Dettagli <i
-                                        class="fa-solid fa-circle-info"></i></a>
+                                    class="fw-bold btn btn-sm btn-info">Dettagli <i class="fa-solid fa-circle-info"></i></a>
                                 <a href="{{ route('comics.edit', $comic->id) }}"
-                                    class="fw-bold btn btn-sm btn-warning my-2">Modifica <i class="fa-solid fa-pencil"></i></a>
+                                    class="fw-bold btn btn-sm btn-warning my-2">Modifica <i
+                                        class="fa-solid fa-pencil"></i></a>
                                 <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
 
-                                    <button class="fw-bold btn btn-sm btn-danger" type="submit">Elimina <i class="fa-solid fa-trash-can"></i></button>
+                                    <button class="fw-bold btn btn-sm btn-danger" type="submit">Elimina <i
+                                            class="fa-solid fa-trash-can"></i></button>
                                 </form>
                             </div>
                         </div>

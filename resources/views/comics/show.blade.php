@@ -16,12 +16,18 @@
                         </p>
                     </div>
                     <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><span class="text-info fw-bold">Serie:</span> {{ $comic->series }}</li>
+                        <li class="list-group-item"><span class="text-info fw-bold">Serie:</span> {{ $comic->series }}
+                        </li>
                         <li class="list-group-item"><span class="text-info fw-bold">Tipo:</span> {{ $comic->type }}</li>
-                        <li class="list-group-item"><span class="text-info fw-bold">Uscita:</span> {{ $comic->sale_date }}</li>
-                        <li class="list-group-item"><span class="text-info fw-bold">Prezzo:</span> {{ $comic->price }}€</li>
+                        <li class="list-group-item"><span class="text-info fw-bold">Uscita:</span> {{ $comic->sale_date }}
+                        </li>
+                        <li class="list-group-item"><span class="text-info fw-bold">Prezzo:</span> {{ $comic->price }}€
+                        </li>
                     </ul>
                 </div>
+            </div>
+            <div class="return-back d-flex align-items-center justify-content-end p-4">
+                <a href="{{ route('comics.edit', $comic) }}" class="btn btn-info">Modifica</a>
             </div>
         </div>
     </div>

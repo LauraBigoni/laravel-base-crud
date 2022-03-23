@@ -34,7 +34,8 @@
                                 <a href="{{ route('comics.edit', $comic->id) }}"
                                     class="fw-bold btn btn-sm btn-warning my-2">Modifica <i
                                         class="fa-solid fa-pencil"></i></a>
-                                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST"
+                                    class="delete-form" data-name="{{ $comic->title }}">
                                     @csrf
                                     @method('DELETE')
 
@@ -50,4 +51,18 @@
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        const deleteForms = document.querySelectorAll('.delete-form');
+        deleteForms.forEach(form => {
+            const name = form.getAttribute('data-name');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const confirmDelete = confirm(`Sei sicuro di voler eliminare ${name}?`);
+                if (confirmDelete) e.target.submit();
+            });
+        })
+    </script>
 @endsection

@@ -101,7 +101,7 @@ class ComicsController extends Controller
             'date' => 'Inserisci una data valida.',
             'price.max' => 'Il massimo è 999',
             'price.min' => 'Non puoi inserire 0',
-            'title.unique' => "$request->comic->title esiste già.",
+            'title.unique' => "$request->title esiste già.",
 
         ]);
 
